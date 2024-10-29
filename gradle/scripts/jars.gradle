@@ -1,0 +1,27 @@
+base {
+	archivesName = project.archives_base_name
+}
+
+machete {
+    enabled = Boolean.getBoolean("PUBLISHING")
+}
+
+jar {
+	from("LICENSE") {
+		rename { "${it}_${project.base.archivesName.get()}"}
+	}
+}
+
+afterEvaluate {
+    tasks.withType(org.gradle.jvm.tasks.Jar).configureEach {
+          manifest.attributes([
+                'MixinConfigs': "${base.archivesName}.mixins.json",
+                'Specification-Title': project.name,
+                'Specification-Version': mod_version,
+                'Specification-Vendor': 'definedentity',
+                'Implementation-Title': base.archivesName,
+                'Implementation-Version': version,
+                'Implementation-Vendor': 'definedentity',
+        ])
+    }
+}
