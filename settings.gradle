@@ -19,7 +19,7 @@ dependencyResolutionManagement {
 	}
 
 	versionCatalogs {
-		def spotlessVersion = "6.25.0"
+		def spotlessVersion = "7.0.0.BETA4"
 		def macheteVersion = "1.+"
 		def fabricLoomVersion = "1.8-SNAPSHOT"
 		def kotlinVersion = "2.0.21"
