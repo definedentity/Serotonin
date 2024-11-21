@@ -1,5 +1,6 @@
 package dev.definedentity.serotonin
 
+import dev.definedentity.serotonin.test.TestMod
 import net.fabricmc.api.ModInitializer
 import org.slf4j.LoggerFactory
 
@@ -16,5 +17,7 @@ class Serotonin : ModInitializer {
 
     override fun onInitialize() {
         init()
+
+        TestMod.init()
     }
 }
