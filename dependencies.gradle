@@ -12,6 +12,8 @@ def recipeViewer(DependencyHandler deps) {
 def modDeps(DependencyHandler deps) {
 	deps.modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	deps.modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
+
+	deps.modImplementation(deps.include("io.github.fabricators_of_create:Porting-Lib:${porting_lib}"))
 }
 
 def devEnv(DependencyHandler deps) {
